@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAEPVision</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="usuario">
+    <img id="foto-usuario" class="avatar" src="imagens_usuarios/saepVision.jpeg" alt="Perfil">
+    <span id="nome-usuario">@SAEPVision</span>
+    <button id="btn-perfil" class="btn-preto" disabled>Ver Perfil</button>
+  </div>
+  <h1 class="empresa" id="logo">SAEPVision</h1>
+  <div class="acesso"><button id="btn-login" class="btn-preto">Login</button></div>
+</header>
+
+<aside id="menu" class="menu" hidden>
+  <button class="fechar" id="menu-fechar" aria-label="Fechar"><i class="ico" style="--i:url(icones/close.svg)"></i></button>
+  <img id="menu-foto" class="avatar grande" alt="">
+  <h2 id="menu-nome"></h2>
+  <p><strong id="menu-likes">0</strong> Likes</p>
+  <p><strong id="menu-pubs">0</strong> Publicações</p>
+  <button id="btn-minhas" class="btn-minhas">Suas publicações</button>
+  <button id="btn-logout" class="btn-preto">Logout</button>
+</aside>
+
+<main>
+  <section id="view-galeria">
+    <div class="busca-box">
+      <div class="busca">
+        <input id="busca" type="text" placeholder="Digite o nome do fotógrafo... ex: @fotografo1" autocomplete="off">
+        <button id="btn-busca" aria-label="Pesquisar"><i class="ico" style="--i:url(icones/lupa.svg);background:#000"></i></button>
+      </div>
+      <p id="busca-erro" class="erro"></p>
+    </div>
+    <div id="galeria" class="galeria"></div>
+  </section>
+
+  <section id="view-registro" hidden>
+    <form id="form-foto" class="form-foto" novalidate>
+      <h2>Cadastro de Fotografias</h2>
+      <label for="titulo">Título da Imagem</label>
+      <input id="titulo" type="text" placeholder="Dedo de Deus">
+      <span class="erro" id="e-titulo"></span>
+      <label for="local">Fonte de origem</label>
+      <input id="local" type="text" placeholder="Rio de Janeiro">
+      <span class="erro" id="e-local"></span>
+      <label>Imagem</label>
+      <div class="arquivo">
+        <label for="imagem" class="btn-preto">Escolher arquivo</label>
+        <span id="nome-arquivo">Nenhum arquivo escolhido</span>
+        <input id="imagem" type="file" accept=".jpg,.jpeg,.png,.gif,.webp" hidden>
+      </div>
+      <span class="erro" id="e-imagem"></span>
+      <button type="submit" class="btn-preto">Cadastrar</button>
+    </form>
+    <h3 class="sub">Publicações cadastradas</h3>
+    <div id="lista-minhas" class="lista-minhas"></div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <span>SAEPVision</span>
+  <div class="redes">
+    <i class="ico" style="--i:url(icones/instagram.svg)"></i>
+    <i class="ico" style="--i:url(icones/tiktok.svg)"></i>
+    <i class="ico" style="--i:url(icones/linkedIn.svg)"></i>
+    <i class="ico" style="--i:url(icones/youtube.svg)"></i>
+  </div>
+  <span>Copyright 2026-2027</span>
+</footer>
+
+<div id="modal" class="overlay" hidden>
+  <form id="form-login" class="modal" novalidate>
+    <button type="button" class="fechar" id="login-x" aria-label="Fechar"><i class="ico" style="--i:url(icones/close.svg);background:#000"></i></button>
+    <h2>Login</h2>
+    <input id="email" type="email" placeholder="Digite seu e-mail">
+    <span class="erro" id="e-email"></span>
+    <input id="senha" type="password" placeholder="Digite sua senha">
+    <span class="erro" id="e-senha"></span>
+    <span class="erro" id="e-login"></span>
+    <div class="acoes">
+      <button type="button" id="login-cancelar" class="btn-borda">Cancelar</button>
+      <button type="submit" class="btn-preto">Login</button>
+    </div>
+  </form>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
